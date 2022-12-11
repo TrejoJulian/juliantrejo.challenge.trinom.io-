@@ -13,9 +13,9 @@
 2. Have Node installed.
 
 ## How to run:
-1. Clone the repository or download the tag and unzip it.
-2. Open a terminal in the root of the project and run npm install.
-3. On the same terminal, run ng serve. The application should start running in port 4200. You can acccess it by going to http://localhost:4200/. 
+1. Clone the repository.
+2. Open a terminal in the root of the project and run `npm install`.
+3. On the same terminal, run `ng serve`. The application should start running in port 4200. You can acccess it by going to http://localhost:4200/. 
 
 ## Goal
 This web application's aim is to provide the user with the ability to manage people and their courses: 
