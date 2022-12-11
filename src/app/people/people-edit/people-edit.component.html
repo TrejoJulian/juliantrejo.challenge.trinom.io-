@@ -1,0 +1,97 @@
+<div class="row center-v">
+    <div class="col-xs-12">
+        <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input
+                         type="text" 
+                         id="first_name"
+                         formControlName="first_name" 
+                         class="form-control">
+                    </div>
+                    <span
+                      *ngIf="!personForm.get('first_name').valid && personForm.get('first_name').touched"
+                       class="help-block">
+                        <span *ngIf="personForm.get('first_name').errors['maxlength']">The name can have up to 30 characters. </span>
+                        <span *ngIf="personForm.get('first_name').errors['required']">This field is required. </span>
+                        <span *ngIf="personForm.get('first_name').errors['whitespace']">Invalid name. </span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input
+                         type="text" 
+                         id="last_name"
+                         formControlName="last_name" 
+                         class="form-control">
+                    </div>
+                    <span
+                      *ngIf="!personForm.get('last_name').valid && personForm.get('last_name').touched"
+                       class="help-block">
+                        <span *ngIf="personForm.get('last_name').errors['maxlength']">Last name can have up to 30 characters. </span>
+                        <span *ngIf="personForm.get('last_name').errors['required']">This field is required. </span>
+                        <span *ngIf="personForm.get('last_name').errors['whitespace']">Invalid last name. </span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                         type="text" 
+                         id="email"
+                         formControlName="email" 
+                         class="form-control"
+                         [ngClass]="{'invalid-input': usedEmailError}">
+                    </div>
+                    <span
+                      *ngIf="!personForm.get('email').valid && personForm.get('email').touched"
+                       class="help-block">
+                        <span *ngIf="personForm.get('email').errors['maxlength']">Email can have up to 254 characters.</span>
+                        <span *ngIf="personForm.get('email').errors['required']">This field is required.</span>
+                        <span *ngIf="personForm.get('email').errors['email']"> The provided email is invalid.</span>
+                    </span>
+                    <span class="help-block" *ngIf="usedEmailError"> {{ usedEmailError }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="courses">
+                    <span style="color:red" *ngIf="invalidCourseName"> There is an invalid course name, you can check the names in Courses.</span>
+                    <div
+                     class="row"
+                     *ngFor="let courseCtrl of controls; let i= index" 
+                     [formGroupName]="i"
+                     style="margin-top: 10px;">
+                        <div class="col-xs-10"> 
+                            <input
+                             type="text"
+                             formControlName="course" 
+                             class="form-control"
+                             placeholder="Course name, E.g. English 1 (You can check them in courses)">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-danger" (click)="onDeleteCourse(i)">X</button>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-primary" (click)="onAddCourse()">Add Course</button>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col-xs-12 btn-toolbar">
+                            <button type="submit" class="btn btn-primary" [disabled]="!personForm.valid">Save</button>
+                            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>

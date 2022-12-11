@@ -1,0 +1,30 @@
+<div class="row search-bar">
+    <div class="col-xs-9">
+        <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+    </div>
+    <div class="col-xs-1 add-button">
+        <button class="btn btn-primary" (click)="onNewPerson()">Add New</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ng-container *ngFor="let person of  getSearchedPeople() | paginate: { itemsPerPage: pageSize, currentPage: page }">
+            <app-person-item 
+            [person]="person"
+            [id]="person.id"></app-person-item>
+        </ng-container>
+    </div>
+</div>
+<div class="row top-buffer pagination-fix">
+    <div class="col-xs-12 center-block text-center">
+        <pagination-controls
+            class="top-buffer"
+            previousLabel="Previous"
+            nextLabel="Next" 
+            (pageChange)="page = $event"
+            >
+        </pagination-controls>
+    </div>
+</div>
+
+

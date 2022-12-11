@@ -1,0 +1,14 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid #ff0000;
+}
+
+invalid-input {
+    border: 1px solid #ff0000;
+}
+
+.top-buffer { margin-top:20px; }
+
+.center-v {
+    margin-top:82px;
+}

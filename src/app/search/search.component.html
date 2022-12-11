@@ -1,0 +1,10 @@
+<div class="main">
+    <div class="form-group has-feedback has-search">
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      <input [(ngModel)]="enteredSearchValue" 
+             (input)="onSearchTextChanged()" 
+             type="text" 
+             class="form-control" 
+             placeholder="Search">
+    </div>
+</div>

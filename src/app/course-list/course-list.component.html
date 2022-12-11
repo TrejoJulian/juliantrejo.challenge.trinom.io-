@@ -1,0 +1,13 @@
+<div class="container top-buffer">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="filter-result">
+                <h3 class="text-center">Available courses:</h3>
+                <div class="col-xs-12">
+                    <app-course-item *ngFor="let course of courses" [course]="course">
+                    </app-course-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

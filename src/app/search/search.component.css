@@ -1,0 +1,16 @@
+
+.main {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.has-search .form-control-feedback {
+    right: initial;
+    left: 0;
+    color: #ccc;
+}
+
+.has-search .form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+}

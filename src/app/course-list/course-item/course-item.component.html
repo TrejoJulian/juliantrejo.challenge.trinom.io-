@@ -1,0 +1,28 @@
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+    integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+<div class="course-box d-md-flex align-items-center justify-content-between mb-30 list-group-item clearfix">
+    <div class="course-left my-4 d-md-flex align-items-center flex-wrap">
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+                    {{course.language_code | uppercase}} 
+                </div>
+            </div>
+            <div class="col-xs-11">
+                <h4 class="text-left mr-2 course-title">{{ course.name }}</h4>
+                <div class="course-content">
+                    <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                        <li class="mr-md-4">
+                            <i class="zmdi mr-2 "></i>Level: {{ course.level.name}}
+                        </li>
+                        <li class="mr-md-4">
+                            <i class="zmdi mr-2"></i>Language: {{course.language.name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

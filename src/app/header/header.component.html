@@ -1,0 +1,16 @@
+<nav class="navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+              <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
+            <a routerLink="/people" class="navbar-brand brand-title">Challenge</a>
+          </div>
+          <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/people">People</a></li>
+                <li routerLinkActive="active"><a routerLink="/courses">Courses</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
